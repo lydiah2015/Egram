@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'gramm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'insta',
+        'NAME': 'egramm',
         'USER': 'user',
     'PASSWORD':'p',
     }
