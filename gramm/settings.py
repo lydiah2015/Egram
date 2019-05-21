@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'elle',
     'bootstrap3',
+    'pyuploadcare.dj',
 ]
 
 MIDDLEWARE = [
@@ -71,6 +72,10 @@ TEMPLATES = [
         },
     },
 ]
+UPLOADCARE = {
+     'pub_key': '8abd1009be0a13872a95',
+     'secret': 'b60a8247233cf573b384',
+ }
 
 WSGI_APPLICATION = 'gramm.wsgi.application'
 
