@@ -29,7 +29,7 @@ class Images(models.Model):
     image_name = models.CharField(max_length=15)
     captions = models.CharField(max_length=50)
     # likes=models.IntegerField(User, related_name = "likes", blank = True)
-    profile_photo=models.ForeignKey(Profile)
+    # profile_photo=models.ForeignKey(Profile)
     user = models.ForeignKey(User, related_name = "posts", blank = True)
    
 def save_image(self):
