@@ -31,14 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap3',
+    'elle',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'elle',
-    'bootstrap3',
     'pyuploadcare.dj',
 ]
 
@@ -73,9 +73,9 @@ TEMPLATES = [
     },
 ]
 UPLOADCARE = {
-     'pub_key': '8abd1009be0a13872a95',
-     'secret': 'b60a8247233cf573b384',
- }
+      'pub_key': '8abd1009be0a13872a95',
+      'secret': 'b60a8247233cf573b384',
+  }
 
 WSGI_APPLICATION = 'gramm.wsgi.application'
 
