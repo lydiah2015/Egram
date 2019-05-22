@@ -1,12 +1,12 @@
 from django import forms
-from .models import Image,Profile
+from .models import Images,Profile
 from pyuploadcare.dj.forms import ImageField
 
 class ImageForm(forms.ModelForm):
     image_url = ImageField(label='Picture')
     class Meta:
-        model = Image
-        fields = ("image","image_name","caption")
+        model = Images
+        fields = ("image","image_name","captions")
 
 class ProfileForm(forms.Form):
     biography = forms.CharField(label = "Biography")
