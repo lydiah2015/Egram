@@ -15,14 +15,17 @@ class Profile(models.Model):
     biography = models.CharField(max_length= 50)
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='profile')
 
-@receiver(post_save, sender=User)
-def create_user_profile(sender, instance, created, **kwargs):
-    if created:
-        Profile.objects.create(user=instance)
+    def __str__(self):
+        return self.user.username
 
-@receiver(post_save, sender=User)
-def save_user_profile(sender, instance, **kwargs):
-    instance.profile.save()
+    @receiver(post_save, sender=User)
+    def create_user_profile(sender, instance, created, **kwargs):
+        if created:
+            Profile.objects.create(user=instance)
+
+    @receiver(post_save, sender=User)
+    def save_user_profile(sender, instance, **kwargs):
+        instance.profile.save()
 
 class Images(models.Model):
     image = models.ImageField(upload_to = 'gramm/')
@@ -32,15 +35,15 @@ class Images(models.Model):
     # profile_photo=models.ForeignKey(Profile)
     user = models.ForeignKey(User, related_name = "posts", blank = True)
    
-def save_image(self):
-    self.save()
+    def save_image(self):
+        self.save()
 
-def delete_image(self):
-    cls.objects.get(id = self.id).delete()
+    def delete_image(self):
+        cls.objects.get(id = self.id).delete()
 
-def update_caption(self,new_caption):
-    self.caption = new_caption
-    self.save()
+    def update_caption(self,new_caption):
+        self.caption = new_caption
+        self.save()
 
 
 class Comments(models.Model):
@@ -48,16 +51,16 @@ class Comments(models.Model):
     comm = models.CharField(max_length = 100, blank = True)
     user = models.ForeignKey(User, related_name = "comments")
 
-def save_comment(self):
-    self.save()
+    def save_comment(self):
+        self.save()
 
-def delete_comment(self):
-    Comments.objects.get(id = self.id).delete()
-    
-def update_comment(self,new_comment):
-    comm = Comments.objects.get(id = self.id)
-    comm.comment = new_comment
-    comm.save()
+    def delete_comment(self):
+        Comments.objects.get(id = self.id).delete()
+        
+    def update_comment(self,new_comment):
+        comm = Comments.objects.get(id = self.id)
+        comm.comment = new_comment
+        comm.save()
 
 
 
