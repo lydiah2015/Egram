@@ -6,7 +6,7 @@ class ImageForm(forms.ModelForm):
     image_url = ImageField(label='Picture')
     class Meta:
         model = Images
-        fields = ("image","image_name","captions")
+        exclude = ('captions','user')
 
 class ProfileForm(forms.Form):
     biography = forms.CharField(label = "Biography")
