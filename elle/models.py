@@ -28,7 +28,7 @@ class Profile(models.Model):
         instance.profile.save()
 
 class Images(models.Model):
-    image = models.ImageField(upload_to = 'gramm/')
+    image = ImageField(blank=True, manual_crop="")
     image_name = models.CharField(max_length=15)
     captions = models.CharField(max_length=50)
     # likes=models.IntegerField(User, related_name = "likes", blank = True)
@@ -61,6 +61,10 @@ class Comments(models.Model):
         comm = Comments.objects.get(id = self.id)
         comm.comment = new_comment
         comm.save()
+
+class Follow(models.Model):
+    user = models.ForeignKey(User, related_name = "user_followers")
+    followed_by = models.ForeignKey(User, related_name = "user_following")
 
 
 
