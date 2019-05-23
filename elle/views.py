@@ -11,7 +11,7 @@ from .forms import ImageForm, ProfileForm
 @login_required(login_url='/accounts/login/')
 def today_photos(request):
     images = Images.objects.all()
-    return render(request, 'all-photos/photos.html', {"images": images,})
+    return render(request, 'all-photos/photos.html', {"images": images})
 
 def my_profile(request):
     user = request.user
