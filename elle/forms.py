@@ -3,10 +3,11 @@ from .models import Images,Profile
 from pyuploadcare.dj.forms import ImageField
 
 class ImageForm(forms.ModelForm):
-    image_url = ImageField(label='Picture')
+    image = ImageField(label='Picture')
+    
     class Meta:
         model = Images
-        exclude = ('captions','user')
+        fields = ("image_name","captions","image")
 
 class ProfileForm(forms.Form):
     biography = forms.CharField(label = "Biography")
