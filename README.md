@@ -36,7 +36,7 @@ ALLOWED_HOSTS='*'
 DISABLE_COLLECTSTATIC=1
 ```
 5. Run `python3.6 manage.py migrate` to migrate your database schema and create a local database instance.
-6. Use the command python3.6 manage.py runserver to open the project on your browser.
+6. Use the command `python3.6 manage.py runserver` to open the project on your browser.
 
 
 
@@ -64,3 +64,7 @@ Fork the repo then create a pull request once done.
 
 ## CONTACT INFORMATION
 For more information or clarification reach me through my email address : mitchellemakini15@gmail.com
+
+## Licence
+copyright (c) Mitchelle Makini 2019
+MIT
